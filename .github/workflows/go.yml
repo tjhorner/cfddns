@@ -18,9 +18,9 @@ jobs:
       run: go get -v -t -d ./...
     - name: Build binaries
       run: |
-        GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o dist/cfddns-windows-amd64.exe .
-        GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o dist/cfddns-darwin-amd64 .
-        GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/cfddns-linux-amd64 .
+        GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o ./cfddns-windows-amd64.exe .
+        GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o ./cfddns-darwin-amd64 .
+        GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o ./cfddns-linux-amd64 .
     - name: Upload the binaries
       uses: skx/github-action-publish-binaries@master
       env:
